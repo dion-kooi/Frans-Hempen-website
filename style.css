@@ -1,0 +1,240 @@
+/* General Styling */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Zorgt ervoor dat padding/border geen extra breedte toevoegen */
+}
+
+body {
+    overflow-x: hidden; /* Verbergt horizontale overflow */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Algemene header styling */
+.header {
+    background-color: rgb(248, 247, 247);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header .logo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Stijl voor de header tekst */
+.header h1 {
+    font-size: 2.5rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #004080;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+h2 {    
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* Container for Products */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px;
+    overflow: hidden    ;
+}
+
+/* Product Card Styling */
+.card {
+    width: 280px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    background-color: #f7f8f9;
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #004080;
+    margin-bottom: 5px;
+}
+
+.card-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgb(248, 247, 247);
+    padding: 40px 20px;
+    text-align: left;
+    position: relative;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.footer-section {
+    text-align: left;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    grid-column: 2;
+
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Responsive Styles */
+
+/* Medium screens (tablets and larger phones) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-logo {
+        order: -1; /* Move logo to the top on mobile */
+    }
+
+    .card img {
+        height: 50%; /* Slightly smaller image height for phones */
+    }
+
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2rem; /* Smaller font size for phones */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Smaller font size for phones */
+    }
+
+    .card {
+        width: 100%; /* Full width for cards on phones */
+        margin: 10px 0; /* Add spacing between cards */
+    }
+
+    .card img {
+        width: 80%; /* Slightly smaller image height for phones */
+
+    }
+
+    .card-title {
+        font-size: 1.2rem; /* Smaller title font size for phones */
+    }
+
+    .card-price {
+        font-size: 1.1rem; /* Smaller price font size for phones */
+    }
+
+    .footer-content {
+        padding: 20px 10px; /* Reduced padding for phones */
+    }
+
+    .footer-section {
+        width: 100%; /* Full width for footer sections on phones */
+    }
+
+    .footer-logo img {
+        max-width: 120px; /* Smaller logo for phones */
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem; /* Smaller font size for footer bottom text */
+    }
+}
+
+/* Ensuring that images fit well in the container */
+.card img {
+    object-fit: cover; /* Ensures that the image maintains aspect ratio */
+}
+
+/* Flexbox for Footer Sections */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
